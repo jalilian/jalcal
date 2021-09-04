@@ -18,6 +18,15 @@ jal2greg <- function(year, month, day, asDate=TRUE)
   year <- as.integer(year)
   month <- as.integer(month)
   day <- as.integer(day)
+  
+  if (any(c(length(year), length(month), length(year) == 0))
+  {
+    if (asDate)
+      return(NA)
+    else
+      return(rep(NA, 3))
+  }
+      
   if (month < 1 | month > 12)
     stop("month is outside the range 1-12")
   if (day < 1 | day > 31)
