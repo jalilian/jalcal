@@ -1,4 +1,5 @@
 [![R Build Status](https://github.com/jalilian/jalcal/workflows/R-CMD-check/badge.svg)](https://github.com/jalilian/jalcal/actions)
 
-# jalcal
-Conversion Between Jalali (Persian or Solar Hijri) and Gregorian Calendar Dates
+# jalcal: an R package to convert Jalali (Persian or Solar Hijri) and Gregorian calendar dates  
+
+Jalali, also known as Persian, Solar Hijri and Hijri Shamsi calendar is the official calendar of Iran and Afghanistan. It begins on Nowruz, the March equinox, as determined by astronomical calculation and has years of 365 or 366 days. Adapting the algorithms in <https://jdf.scr.ir/>, this package provides tools for converting the Jalali and Gregorian dates.
