@@ -5,3 +5,21 @@
 # jalcal: an R package to convert Jalali (Persian or Solar Hijri) and Gregorian calendar dates  
 
 Jalali, also known as Persian, Solar Hijri and Hijri Shamsi calendar is the official calendar of Iran and Afghanistan. It begins on Nowruz, the March equinox, as determined by astronomical calculation and has years of 365 or 366 days. Adapting the algorithms in <https://jdf.scr.ir/>, this package provides tools for converting the Jalali and Gregorian dates.
+
+## Installation
+
+To install the package from [CRAN](https://CRAN.R-project.org/package=jalcal), run the following in R:
+```R
+install.packages('jalcal')
+```
+
+You can also install the current version of the package on GitHub by running:
+```R
+require(remotes)
+install_github('jalilian/jalcal')
+```
+
+If [remotes](https://github.com/r-lib/remotes) is not installed, you should first run:
+
+```R
+install.packages('remotes')
