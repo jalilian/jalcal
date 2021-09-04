@@ -19,7 +19,7 @@ jal2greg <- function(year, month, day, asDate=TRUE)
   month <- as.integer(month)
   day <- as.integer(day)
   
-  if (any(c(length(year), length(month), length(year) == 0))
+  if (any(c(length(year), length(month), length(year) == 0)))
   {
     if (asDate)
       return(NA)
