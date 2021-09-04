@@ -20,7 +20,7 @@ jal2greg <- function(year, month, day, asDate=TRUE)
   day <- as.integer(day)
   
   if (any(c(length(year), length(month), length(day)) == 0) | 
-     any(is.finite(c(year, month, day))))
+     any(!is.finite(c(year, month, day))))
   {
     if (asDate)
       return(NA)
