@@ -1,4 +1,6 @@
 [![R Build Status](https://github.com/jalilian/jalcal/workflows/R-CMD-check/badge.svg)](https://github.com/jalilian/jalcal/actions)
+[![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![Last Commit](https://img.shields.io/github/last-commit/jalilian/jalcal)](https://github.com/jalilian/jalcal)
 
 # jalcal: an R package to convert Jalali (Persian or Solar Hijri) and Gregorian calendar dates  
 
