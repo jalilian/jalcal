@@ -29,9 +29,17 @@ install.packages('remotes')
 
 ## Usage
 
+As examples of converting Jalali dates to Gregorian dates, simply run
+
 ```R
 require('jalcal')
 jal2greg(1, 1, 1)
 jal2greg(1362, 6, 17)
 jal2greg(1362, 6, 17, asDate=FALSE)
+```
+Run the following as examples of converting Gregorian dates to Jalali dates
+```R
+greg2jal0(622, 3, 21)
+greg2jal0(1983, 9, 8)
+greg2jal(base::Sys.Date())
 ```
