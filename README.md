@@ -36,6 +36,8 @@ require('jalcal')
 jal2greg(1, 1, 1)
 jal2greg(1362, 6, 17)
 jal2greg(1362, 6, 17, asDate=FALSE)
+jal2greg(c(1362, 1394), c(6, 3), c(17, 19))
+jal2greg(c(1362, 1394), c(6, 3), c(17, 19), asDate=FALSE)
 ```
 Run the following as examples of converting Gregorian dates to Jalali dates
 ```R
