@@ -64,7 +64,7 @@ jal2greg <- function(year, month, day, asDate=TRUE)
   # 4 years in Gregorian calendar is 1461 days
   gyear <- gyear + 4 * (days %/% 1461)
   days <- days %% 1461
-  gyear <- ifelse(days > 365, gyear + ((days - 1) %/% 365, gyear))
+  gyear <- ifelse(days > 365, gyear + ((days - 1) %/% 365), gyear)
   days <- ifelse(days > 365, days <- (days - 1) %% 365, days)
   gday <- days + 1
 
