@@ -1,4 +1,7 @@
 
+#' @name jal2greg
+#' @aliases jal2greg
+#'
 #' Convert Jalali calendar date to Gregorian calendar date
 #'
 #' @param year An integer specifying Jalali year
