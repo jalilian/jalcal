@@ -6,8 +6,8 @@ Description: Jalali, also known as Persian, Solar Hijri and Hijri Shamsi calenda
     as determined by astronomical calculation and has years of 365 or 366 days. 
     Adapting the algorithms in <https://jdf.scr.ir/>, this package provides tools 
     for converting the Jalali and Gregorian dates.
-Version: 0.1.0
-Date: 2021-09-04
+Version: 0.2.0
+Date: 2022-06-07
 Authors@R: c(
   person(given = "Abdollah", family = "Jalilian", 
          email = "jalilian@razi.ac.ir", 
