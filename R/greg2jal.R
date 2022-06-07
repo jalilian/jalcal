@@ -2,7 +2,7 @@
 #' @name greg2jal
 #' @aliases greg2jal
 #'
-#' @title Convert Gregorian calendar date to Jalali calendar date
+#' @title Convert Gregorian calendar date (R Date format) to Jalali calendar date
 #'
 #' @param date An object of class Date specifying Gregorian date
 #' @return An integer vector consisting of the corresponding Jalali year, month and day
@@ -27,7 +27,7 @@ greg2jal <- function(date)
     month[i] <- as.integer(dt[2])
     day[i] <- as.integer(dt[3])
   }
-  greg2jal0(year, month, day)
+  greg2jal0(year, month, day, asDate=FALSE)
 }
 
 #' @name greg2jal0
@@ -40,7 +40,6 @@ greg2jal <- function(date)
 #' @param day An integer specifying Gregorian day
 #' @param asDate A logical flag indicating whether the output Gregorian date must be in date format
 #' @return If \code{asDate = TRUE}, an object of the \code{Date} class in \code{R}, otherwise an integer vector consisting of the Jalali year, month and day
-
 #' @rdname greg2jal0
 #' @export
 #' @examples
