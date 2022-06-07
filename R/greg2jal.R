@@ -17,10 +17,15 @@ greg2jal <- function(date)
   if (!("Date" %in% class(date)))
     stop("date is not an object of class Date")
   date <- as.Date(date, format="%Y-%m-%d")
-  date <- strsplit(as.character(date), split="-")[[1]]
-  year <- as.integer(date[1])
-  month <- as.integer(date[2])
-  day <- as.integer(date[3])
+  ndates <- length(date)
+  year <- month <- day <- numeric(ndates)
+  for (i in 1:ndates)
+  {
+    dt <- strsplit(as.character(date[i]), split="-")[[1]]
+    year[i] <- as.integer(dt[1])
+    month[i] <- as.integer(dt[2])
+    day[i] <- as.integer(dt[3])
+  }
   greg2jal0(year, month, day)
 }
 
@@ -40,6 +45,8 @@ greg2jal <- function(date)
 #' @examples
 #' greg2jal0(622, 3, 21)
 #' greg2jal0(1983, 9, 8)
+#' greg2jal0(c(1983, 2015), c(9, 6), c(8, 9))
+#' greg2jal0(c(1983, 2015), c(9, 6), c(8, 9), asDate=TRUE)
 #'
 greg2jal0 <- function(year, month, day, asDate=FALSE)
 {
