@@ -26,11 +26,11 @@ jal2greg <- function(year, month, day, asDate=TRUE)
     {
       return(as.Date(paste(gdate[1], gdate[2], gdate[3], sep="-")))
     } else{
-      return(gfate)
+      return(gdate)
     }        
   } else{
     gdates <- mapply(do.jal2greg, year, month, day, 
-                    SIMPLIFY=FALSE, USE.NAMES=FALSE)
+                    SIMPLIFY=TRUE, USE.NAMES=FALSE)
     if (asDate)
     {
       return(as.Date(paste(gdates[, 1], gdates[, 2], gdates[, 3], sep="-")))
