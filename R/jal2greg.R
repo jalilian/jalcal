@@ -12,7 +12,8 @@
 #' jal2greg(1, 1, 1)
 #' jal2greg(1362, 6, 17)
 #' jal2greg(1362, 6, 17, asDate=FALSE)
-#'
+#' jal2greg(c(1362, 1394), c(6, 3), c(17, 19))
+#' 
 jal2greg <- function(year, month, day, asDate=TRUE)
 {
   ndates <- length(year)
@@ -35,7 +36,7 @@ jal2greg <- function(year, month, day, asDate=TRUE)
     {
       return(as.Date(paste(gdates[1, ], gdates[2, ], gdates[3, ], sep="-")))
     } else{
-      return(gdates)
+      return(t(gdates))
     }  
   }
 }
