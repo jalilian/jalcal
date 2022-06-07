@@ -43,5 +43,7 @@ Run the following as examples of converting Gregorian dates to Jalali dates
 ```R
 greg2jal0(622, 3, 21)
 greg2jal0(1983, 9, 8)
+greg2jal0(c(1983, 2015), c(9, 6), c(8, 9))
+greg2jal0(c(1983, 2015), c(9, 6), c(8, 9), asDate=TRUE)
 greg2jal(base::Sys.Date())
 ```
