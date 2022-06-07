@@ -11,6 +11,7 @@
 #' @export
 #' @examples
 #' greg2jal(base::Sys.Date())
+#' greg2jal(as.Date(c("1983-09-08", "2015-06-09")))
 #'
 greg2jal <- function(date)
 {
