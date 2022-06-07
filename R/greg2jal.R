@@ -30,9 +30,6 @@ greg2jal <- function(date)
   greg2jal0(year, month, day, asDate=FALSE)
 }
 
-#' @name greg2jal0
-#' @aliases greg2jal0
-#'
 #' @title Convert Gregorian calendar date to Jalali calendar date
 #'
 #' @param year An integer specifying Gregorian year
