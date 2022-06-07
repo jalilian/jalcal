@@ -46,6 +46,8 @@ jal2greg <- function(year, month, day, asDate=TRUE)
 #' @param year An integer specifying Jalali year
 #' @param month An integer specifying Jalali month
 #' @param day An integer specifying Jalali day
+#' @return An integer vector consisting of the corresponding Gregorian year, month and day
+#' @author Abdollah Jalilian
 #' @noRd
 do.jal2greg <- function(year, month, day)
 {
