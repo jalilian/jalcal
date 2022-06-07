@@ -1,3 +1,29 @@
+
+#' @name greg2jal
+#' @aliases greg2jal
+#'
+#' @title Convert Gregorian calendar date to Jalali calendar date
+#'
+#' @param date An object of class Date specifying Gregorian date
+#' @return An integer vector consisting of the corresponding Jalali year, month and day
+#' @author Abdollah Jalilian
+#' @rdname greg2jal
+#' @export
+#' @examples
+#' greg2jal(base::Sys.Date())
+#'
+greg2jal <- function(date)
+{
+  if (!("Date" %in% class(date)))
+    stop("date is not an object of class Date")
+  date <- as.Date(date, format="%Y-%m-%d")
+  date <- strsplit(as.character(date), split="-")[[1]]
+  year <- as.integer(date[1])
+  month <- as.integer(date[2])
+  day <- as.integer(date[3])
+  greg2jal0(year, month, day)
+}
+
 #' @name greg2jal0
 #' @aliases greg2jal0
 #'
@@ -6,8 +32,8 @@
 #' @param year An integer specifying Gregorian year
 #' @param month An integer specifying Gregorian month
 #' @param day An integer specifying Gregorian day
-#' @return An integer vector consisting of the corresponding Jalali year, month and day
-#' @author Abdollah Jalilian
+#' @param asDate A logical flag indicating whether the output Gregorian date must be in date format
+#' @return If \code{asDate = TRUE}, an object of the \code{Date} class in \code{R}, otherwise an integer vector consisting of the Jalali year, month and day
 
 #' @rdname greg2jal0
 #' @export
@@ -15,7 +41,42 @@
 #' greg2jal0(622, 3, 21)
 #' greg2jal0(1983, 9, 8)
 #'
-greg2jal0 <- function(year, month, day)
+greg2jal0 <- function(year, month, day, asDate=FALSE)
+{
+  ndates <- length(year)
+  if (length(month) != ndates | length(day) != ndates)
+    stop("year, month and day arguments must have the same length")
+  
+  if (ndates == 1)
+  {
+    jdate <- do.greg2jal(year, month, day)
+    if (asDate)
+    {
+      return(as.Date(paste(jdate[1], jdate[2], jdate[3], sep="-")))
+    } else{
+      return(jdate)
+    }        
+  } else{
+    jdates <- mapply(do.greg2jal, year, month, day, 
+                    SIMPLIFY=TRUE, USE.NAMES=FALSE)
+    if (asDate)
+    {
+      return(as.Date(paste(jdates[1, ], jdates[2, ], jdates[3, ], sep="-")))
+    } else{
+      return(t(jdates))
+    }
+  }
+}
+
+#' @title Internal function for converting Gregorian calendar date to Jalali calendar date
+#'
+#' @param year An integer specifying Gregorian year
+#' @param month An integer specifying Gregorian month
+#' @param day An integer specifying Gregorian day
+#' @return An integer vector consisting of the corresponding Jalali year, month and day
+#' @author Abdollah Jalilian
+#' @noRd
+do.greg2jal <- function(year, month, day)
 {
   year <- as.integer(year)
   month <- as.integer(month)
@@ -56,29 +117,4 @@ greg2jal0 <- function(year, month, day)
   }
 
   return(c(jyear, jmonth, jday))
-}
-
-#' @name greg2jal
-#' @aliases greg2jal
-#'
-#' @title Convert Gregorian calendar date to Jalali calendar date
-#'
-#' @param date An object of class Date specifying Gregorian date
-#' @return An integer vector consisting of the corresponding Jalali year, month and day
-#' @author Abdollah Jalilian
-#' @rdname greg2jal
-#' @export
-#' @examples
-#' greg2jal(base::Sys.Date())
-#'
-greg2jal <- function(date)
-{
-  if (!("Date" %in% class(date)))
-    stop("date is not an object of class Date")
-  date <- as.Date(date, format="%Y-%m-%d")
-  date <- strsplit(as.character(date), split="-")[[1]]
-  year <- as.integer(date[1])
-  month <- as.integer(date[2])
-  day <- as.integer(date[3])
-  greg2jal0(year, month, day)
 }
