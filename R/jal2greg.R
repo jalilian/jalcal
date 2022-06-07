@@ -33,7 +33,7 @@ jal2greg <- function(year, month, day, asDate=TRUE)
                     SIMPLIFY=TRUE, USE.NAMES=FALSE)
     if (asDate)
     {
-      return(as.Date(paste(gdates[, 1], gdates[, 2], gdates[, 3], sep="-")))
+      return(as.Date(paste(gdates[1, ], gdates[2, ], gdates[3, ], sep="-")))
     } else{
       return(gdates)
     }  
