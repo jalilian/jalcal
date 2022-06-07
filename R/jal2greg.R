@@ -35,7 +35,7 @@ jal2greg <- function(year, month, day, asDate=TRUE)
     {
       return(as.Date(paste(gdates[, 1], gdates[, 2], gdates[, 3], sep="-")))
     } else{
-      return(gfates)
+      return(gdates)
     }  
   }
 }
