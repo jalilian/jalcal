@@ -105,27 +105,27 @@ greg_to_jal <- function(Gy, Gm, Gd)
   # Gm: Gregorian month (1-12)
   # Gd: Gregorian day (1-31, 1-30, etc.)
   
-  # Search for the Jalaali year
-  for (Jy in (Gy - 622):(Gy - 620)) 
-  { # Check a range of possible Jy values
+  # search for the Jalaali year
+  Jy <- Gy - 621
+  cal_info <- jal_cal(Jy)
+  March <- cal_info$March
+  Gregorian_date <- as.Date(paste(Gy, Gm, Gd, sep="-"))
+  Jalaali_day_of_year <- as.numeric(Gregorian_date - 
+                                      as.Date(paste(Gy, "03", March, sep="-"))) + 1
+  
+  if (Jalaali_day_of_year < 1)
+  {
+    Jy <- Jy - 1
     cal_info <- jal_cal(Jy)
-    if (cal_info$Gy == Gy) 
-    {
-      March <- cal_info$March
-      leap <- cal_info$leap
-      break # Found the correct Jy
-    }
+    March <- cal_info$March
+    Jalaali_day_of_year <- as.numeric(Gregorian_date - 
+                                        as.Date(paste(Gy - 1, "03", March, sep="-"))) + 1
   }
   
   if(exists("March") == FALSE)
   {
     stop("Date out of range")
   }
-  
-  Gregorian_date <- as.Date(paste0(Gy, "-", Gm, "-", Gd))
-  Gregorian_day_of_year <- as.numeric(format(Gregorian_date, "%j"))
-  Jalaali_day_of_year <- Gregorian_day_of_year - 
-    as.numeric(format(as.Date(paste(Gy, "03", March, sep="-")), "%j")) + 1
   
   # days in each Jalaali month
   days_in_month <- c(rep(31, 6), 
