@@ -2,23 +2,52 @@
 % Please edit documentation in R/greg2jal.R
 \name{greg2jal}
 \alias{greg2jal}
-\title{Convert Gregorian calendar date to Jalali calendar date}
+\title{Convert Gregorian Dates to Jalaali (Persian) Calendar}
 \usage{
-greg2jal(date)
+greg2jal(dates)
 }
 \arguments{
-\item{date}{An object of class Date specifying Gregorian date}
+\item{dates}{A vector of class `Date` representing the Gregorian dates to be converted.}
 }
 \value{
-An integer vector consisting of the corresponding Jalali year, month and day
+A data frame with three columns:
+\item{Year}{The corresponding Jalaali year.}
+\item{Month}{The corresponding Jalaali month.}
+\item{Day}{The corresponding Jalaali day.}
+
+If a single date is provided, a numeric vector of length 3 (Year, Month, Day) is returned.
 }
 \description{
-Convert Gregorian calendar date to Jalali calendar date
+This function converts a vector of Gregorian dates (in `Date` format) to their
+corresponding Jalaali (Persian) calendar dates. It correctly handles leap years
+and determines the exact Jalaali year, month, and day for each input date.
+}
+\details{
+The Jalaali calendar is a solar calendar with an irregular leap year pattern. This function
+follows an algorithm based on equinox calculations to accurately determine the Jalaali date
+for each given Gregorian date.
+
+**Conversion Process:**
+- The function first ensures that the input is of class `Date`.
+- It estimates the Jalaali year by subtracting 621 from the Gregorian year.
+- Leap year information for relevant Jalaali years is obtained using `jalLeap`.
+- The function then determines the first day of the Jalaali year in the Gregorian calendar.
+- Using cumulative day counts, it calculates the Jalaali month and day.
+- If the input date falls before the start of the Jalaali year (before March 21), an adjustment
+  is made to account for the previous year.
+
+The function efficiently handles both single and multiple date inputs, returning either a numeric
+vector (for a single date) or a well-structured data frame.
 }
 \examples{
-greg2jal(base::Sys.Date())
+# Convert a single Gregorian date to Jalaali
+greg2jal(as.Date("2024-03-21"))
+
+# Convert multiple dates
+greg2jal(as.Date(c("2024-03-21", "2024-04-10", "2025-01-01")))
 
 }
-\author{
-Abdollah Jalilian
+\seealso{
+- \link[jalcal]{jalLeap} for computing leap year information.
+- \link[jalcal]{jal2greg} for converting Jalaali dates to Gregorian dates
 }

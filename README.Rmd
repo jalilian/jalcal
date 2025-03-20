@@ -1,0 +1,86 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# jalcal: an R package to convert Jalaali and Gregorian calendar dates
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+## Overview
+
+The Persian or Jalaali calendar, also called the Solar Hijri or Hijri Shamsi 
+calendar, is a 12-month system. 
+
+- It begins its count from the Hijra, which is July 19, 622 AD in the standard 
+Gregorian calendar.
+
+- The Persian New Year begins on Nowruz, the spring equinox. This means the start 
+of the year is timed with the start of spring, as determined by astronomical 
+observations.
+
+- The first six months have 31 days each, the next five have 30 days, and the 
+last month has 29 days in common years and 30 days in leap years. Each season 
+consists of three consecutive months.
+
+- The exact leap year determination also relies on the vernal equinox date and 
+time. The calculations and conversions in this package are based on the work by 
+Kazimierz M. Borkowski (1996) who used an analytical model of Earth's motion 
+to calculate equinoxes from AD 550 to 3800 and identify leap years based on 
+Tehran time.
+
+- The Persian calendar is the official calandar in Iran and Afghanistan and is 
+also used in parts of Tajikistan and Kurdistan, particularly among Persian- and 
+Kurdish-speaking communities.
+
+
+- Borkowski, K. M. (1996). The Persian calendar for 3000 years. 
+*Earth, Moon, and Planets*, 74, 223–230. [doi:10.1007/BF00055188](https://doi.org/10.1007/BF00055188)
+
+## Installation
+
+To install the development version of `jalcal` from [GitHub](https://github.com/jalilian/jalcal), use the [remotes](https://CRAN.R-project.org/package=remotes) package:
+```r
+# Install remotes if not already installed
+install.packages("remotes")
+
+# Install getsat from GitHub
+remotes::install_github("jalilian/jalcal")
+```
+
+To install the package from [CRAN](https://CRAN.R-project.org/package=jalcal), use the `install.packages` command:
+```r
+# install.packages('jalcal')
+```
+
+## Example 1: Convert Jalaali dates to Gregorian dates
+
+To convert **Jalaali dates** (e.g., `1403-12-30` and `1404-01-01`) to **Gregorian dates**, use:
+```{r example1}
+library("jalcal")
+dates <- jal2greg(year=c(1403, 1404), month=c(12, 1), day=c(30, 1))
+print(dates)
+```
+
+
+## Example 2: Convert Gregorian dates to Jalaali dates
+
+To convert **Gregorian dates** to **Jalaali dates**, use:
+```{r example2}
+set.seed(14040101)
+gdates <- sample(seq.Date(from = as.Date("561-01-01"), 
+                                to = as.Date("3177-12-31"), by = "day"), 
+                       size = 100)
+jdates <- greg2jal(gdates)
+cbind(gdates, jdates)
+```
+
