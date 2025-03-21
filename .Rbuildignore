@@ -1,4 +1,6 @@
-^myPKG\.Rproj$
+^.*\.Rproj$
 ^\.Rproj\.user$
+^\.github
+
 ^README\.Rmd$
 ^LICENSE\.md$

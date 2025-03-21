@@ -1,15 +1,15 @@
 Package: jalcal
 Type: Package
 Title: Convert Between Jalaali (Persian or Solar Hijri) and Gregorian Calendar Dates
-Description: The Jalaali calendar, also known as the Persian or Solar Hijri calendar, 
-    is the official calendar of Iran and Afghanistan. It starts on Nowruz, the spring 
-    equinox, and follows an astronomical system for determining leap years. Each year 
-    consists of 365 or 366 days, divided into 12 months. This package provides functions 
-    for converting dates between the Jalaali and Gregorian calendars. The conversion 
-    calculations are based on the work of Kazimierz M. Borkowski (1996) 
-    (<https://doi.org/10.1007/BF00055188>), who used an analytical model of Earth's 
-    motion to compute equinoxes from AD 550 to 3800 and determine leap years based 
-    on Tehran time.
+Description: The Jalaali calendar, also known as the Persian or Solar Hijri 
+    calendar, is the official calendar of Iran and Afghanistan. It starts on 
+    Nowruz, the spring equinox, and follows an astronomical system for 
+    determining leap years. Each year consists of 365 or 366 days, divided into 
+    12 months. This package provides functions for converting dates between the 
+    Jalaali and Gregorian calendars. The conversion calculations are based on 
+    the work of Kazimierz M. Borkowski (1996) (<doi:10.1007/BF00055188>), who 
+    used an analytical model of Earth's motion to compute equinoxes from AD 550 
+    to 3800 and determine leap years based on Tehran time.
 Version: 0.3.0
 Date: 2025-03-20
 Authors@R: c(
@@ -22,11 +22,9 @@ Authors@R: c(
            role = "ctb"
     )
   )
-Author: Abdollah Jalilian [aut, cre]
 Maintainer: Abdollah Jalilian <stat4aj@gmail.com>
 License: GPL (>= 2)
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 7.3.2
 URL: https://github.com/jalilian/jalcal
 BugReports: https://github.com/jalilian/jalcal/issues
