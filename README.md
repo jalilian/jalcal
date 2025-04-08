@@ -3,7 +3,9 @@
 
 <!-- badges: start -->
 
-![R-CMD-check](https://github.com/jalilian/jalcal/actions/workflows/R-CMD-check.yaml/badge.svg)
+![R-CMD-check](https://github.com/jalilian/jalcal/actions/workflows/R-CMD-check.yml/badge.svg)
+[![CRAN
+Version](https://www.r-pkg.org/badges/version/jalcal)](https://CRAN.R-project.org/package=jalcal)
 ![CRAN Downloads](https://cranlogs.r-pkg.org/badges/last-month/jalcal)
 <!-- badges: end -->
 
