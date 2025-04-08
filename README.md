@@ -2,6 +2,8 @@
 # jalcal: an R package to convert Jalaali and Gregorian calendar dates
 
 <!-- badges: start -->
+
+![CRAN Downloads](https://cranlogs.r-pkg.org/badges/last-month/jalcal)
 <!-- badges: end -->
 
 ## Overview
