@@ -27,17 +27,18 @@ Shamsi calendar, is a 12-month system.
 
 - The exact leap year determination also relies on the vernal equinox
   date and time. The calculations and conversions in this package are
-  based on the work by Kazimierz M. Borkowski (1996) who used an
-  analytical model of Earth’s motion to calculate equinoxes from AD 550
-  to 3800 and identify leap years based on Tehran time.
+  based on the work by [Kazimierz M.
+  Borkowski](http://www.astro.uni.torun.pl/~kb/kb.htm) (1996) who used
+  an analytical model of Earth’s motion to calculate equinoxes from AD
+  550 to 3800 and identify leap years based on Tehran time.
 
 - The Persian calendar is the official calandar in Iran and Afghanistan
   and is also used in parts of Tajikistan and Kurdistan, particularly
   among Persian- and Kurdish-speaking communities.
 
-- Borkowski, K. M. (1996). The Persian calendar for 3000 years. *Earth,
-  Moon, and Planets*, 74, 223–230.
-  [doi:10.1007/BF00055188](https://doi.org/10.1007/BF00055188)
+Borkowski, K. M. (1996). The Persian calendar for 3000 years. *Earth,
+Moon, and Planets*, 74, 223–230.
+[doi:10.1007/BF00055188](https://doi.org/10.1007/BF00055188)
 
 ## Installation
 
